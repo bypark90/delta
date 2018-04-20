@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var app = express();
 
 // mongoose DB
-mongoose.connect("mongodb://delta:bear1030@ds149279.mlab.com:49279/deltax");
+mongoose.connect(process.env.MONGO_DB);
 var db = mongoose.connection;
 db.once("open", function() {
   console.log("DB connected!");
